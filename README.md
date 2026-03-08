@@ -324,6 +324,17 @@ dbt run
 7. Executar o Dashboard
 streamlit run app/app.py
 
+## Aprendizados
+
+Durante o desenvolvimento deste projeto foram aplicados conceitos importantes de engenharia de dados:
+
+- Construção de pipelines ETL com Python
+- Integração com APIs de dados financeiros
+- Armazenamento de dados em PostgreSQL
+- Modelagem analítica com dbt (staging e data mart)
+- Criação de dashboards com Streamlit
+- Organização de projetos de dados no GitHub
+
 O dashboard abrirá em:
 
 http://localhost:8501
