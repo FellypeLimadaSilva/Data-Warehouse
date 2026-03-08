@@ -265,13 +265,66 @@ DB_NAME_PROD
 DB_USER_PROD
 DB_PASS_PROD
 
-Como Executar o Projeto
 
-Com comandos:
+# Como Executar o Projeto
+Siga os passos abaixo para executar a pipeline localmente.
 
+## 1. Clonar o repositório
 
-git clone
-pip install
+```bash
+git clone https://github.com/SEU-USUARIO/Data-Warehouse.git
+cd Data-Warehouse
+
+2. Criar ambiente virtual
+python -m venv venv
+
+Ativar ambiente:
+
+Windows
+venv\Scripts\activate
+Linux / Mac
+source venv/bin/activate
+
+3. Instalar dependências
+pip install -r src/requirements.txt
+
+4. Configurar variáveis de ambiente
+Crie um arquivo .env na raiz do projeto:
+
+DB_HOST_PROD=localhost
+DB_PORT_PROD=5432
+DB_NAME_PROD=seu_banco
+DB_USER_PROD=seu_usuario
+DB_PASS_PROD=sua_senha
+
+5. Executar ingestão de dados
+python src/extract_load.py
+
+Esse script irá:
+
+coletar dados do Yahoo Finance
+
+processar os dados
+
+salvar no PostgreSQL
+
+6. Executar transformações do dbt
+Entre na pasta do projeto dbt:
+
+cd dbt
+
+Carregar seeds:
+
 dbt seed
+
+Executar modelos:
+
 dbt run
-streamlit run
+
+7. Executar o Dashboard
+streamlit run app/app.py
+
+O dashboard abrirá em:
+
+http://localhost:8501
+
