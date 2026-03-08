@@ -1,0 +1,5 @@
+data,simbolo,acao,quantidade
+2026-03-02,CL=F,buy,10
+2026-03-03,CL=F,sell,5
+2026-03-04,GC=F,buy,8
+2026-03-05,GC=F,sell,3

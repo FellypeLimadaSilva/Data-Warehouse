@@ -1,0 +1,51 @@
+version: 2
+
+sources:
+  - name: datadw
+    description: "Fonte de dados carregada no PostgreSQL"
+    schema: public
+    tables:
+      - name: commodities
+        description: "Tabela seed de commodities"
+        columns:
+          - name: Date
+            description: "Data do preço"
+          - name: Close
+            description: "Preço de fechamento da commodity"
+          - name: simbolo
+            description: "Símbolo da commodity"
+
+      - name: movimentacao_commodities
+        description: "Tabela seed de movimentação"
+        columns:
+          - name: data
+            description: "Data da transação"
+          - name: simbolo
+            description: "Símbolo da commodity"
+          - name: acao
+            description: "Tipo de transação buy ou sell"
+          - name: quantidade
+            description: "Quantidade transacionada"
+
+models:
+  - name: stg_commodities
+    description: "Camada staging de commodities"
+    columns:
+      - name: data
+        description: "Data do preço"
+      - name: valor_fechamento
+        description: "Preço de fechamento"
+      - name: simbolo
+        description: "Símbolo da commodity"
+
+  - name: stg_movimentacao_commodities
+    description: "Camada staging de movimentação"
+    columns:
+      - name: data
+        description: "Data da transação"
+      - name: simbolo
+        description: "Símbolo da commodity"
+      - name: acao
+        description: "Tipo de transação"
+      - name: quantidade
+        description: "Quantidade transacionada"
