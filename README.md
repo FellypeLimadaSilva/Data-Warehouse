@@ -34,6 +34,7 @@ dbt (Staging Layer)
 dbt (Data Mart)
       ↓
 Streamlit Dashboard
+
 1. Fonte de Dados — Yahoo Finance
 
 Os dados de preços das commodities são coletados utilizando a biblioteca yfinance, que fornece acesso à API do Yahoo Finance.
@@ -45,6 +46,7 @@ CL=F → Crude Oil
 GC=F → Gold
 
 SI=F → Silver
+
 
 2. Ingestão de Dados — Python ETL (Extract & Load)
 
@@ -64,6 +66,7 @@ Carregar os dados na tabela commodities no PostgreSQL
 
 Essa etapa representa a camada EL (Extract & Load) da pipeline.
 
+
 3. Armazenamento de Dados — PostgreSQL
 
 Os dados coletados são armazenados em um banco PostgreSQL, que serve como base para as transformações analíticas realizadas pelo dbt.
@@ -71,6 +74,8 @@ Os dados coletados são armazenados em um banco PostgreSQL, que serve como base 
 Tabela principal gerada pela ingestão:
 
 public.commodities
+
+
 4. Transformação de Dados — dbt
 
 O dbt (Data Build Tool) é responsável pela transformação e modelagem analítica dos dados.
@@ -124,6 +129,7 @@ Calcula ganho ou perda das transações
 Filtra os dados da data mais recente
 
 Essa tabela representa a camada final analítica utilizada para consumo.
+
 
 5. Visualização de Dados — Streamlit
 
